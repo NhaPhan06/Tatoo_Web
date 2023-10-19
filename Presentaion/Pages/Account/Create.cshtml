@@ -1,0 +1,81 @@
+@page
+@model Presentaion.Pages.Account.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Account</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.UserName" class="control-label"></label>
+                <input asp-for="CreateAccount.UserName" class="form-control"/>
+                <span asp-validation-for="CreateAccount.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.Password" class="control-label"></label>
+                <input asp-for="CreateAccount.Password" class="form-control"/>
+                <span asp-validation-for="CreateAccount.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.Email" class="control-label"></label>
+                <input asp-for="CreateAccount.Email" class="form-control"/>
+                <span asp-validation-for="CreateAccount.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.Phone" class="control-label"></label>
+                <input asp-for="CreateAccount.Phone" class="form-control"/>
+                <span asp-validation-for="CreateAccount.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.DateOfBirth" class="control-label"></label>
+                <input asp-for="CreateAccount.DateOfBirth" class="form-control"/>
+                <span asp-validation-for="CreateAccount.DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.CreateDate" class="control-label"></label>
+                <input asp-for="CreateAccount.CreateDate" class="form-control"/>
+                <span asp-validation-for="CreateAccount.CreateDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.StudioEmail" class="control-label"></label>
+                <input asp-for="CreateAccount.StudioEmail" class="form-control"/>
+                <span asp-validation-for="CreateAccount.StudioEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.StudioPhone" class="control-label"></label>
+                <input asp-for="CreateAccount.StudioPhone" class="form-control"/>
+                <span asp-validation-for="CreateAccount.StudioPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.Name" class="control-label"></label>
+                <input asp-for="CreateAccount.Name" class="form-control"/>
+                <span asp-validation-for="CreateAccount.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreateAccount.Address" class="control-label"></label>
+                <input asp-for="CreateAccount.Address" class="form-control"/>
+                <span asp-validation-for="CreateAccount.Address" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
