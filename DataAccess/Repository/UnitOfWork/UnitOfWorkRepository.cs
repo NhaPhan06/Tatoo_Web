@@ -9,7 +9,7 @@ public class UnitOfWorkRepository : IUnitOfWork
 
     public UnitOfWorkRepository(TatooWebContext context)
     {
-        context = _context;
+        _context = context;
         Account = new AccountRepository(_context);
         Artist = new ArtistRepository(_context);
         ArtWork = new ArtWorkRepository(_context);

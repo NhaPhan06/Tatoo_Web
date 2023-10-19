@@ -15,13 +15,8 @@ namespace BusinessLogic.Configuration;
 
 public static class DenpendencyInjection
 {
-    public static IServiceCollection AddService(this IServiceCollection services, string connectionString)
+    public static IServiceCollection AddService(this IServiceCollection services)
     {
-        // CONNECT DB
-        /*services.AddDbContext<TatooWebContext>(options =>
-            options.UseSqlServer(connectionString));*/
-        
-        
         // SIGN UP UNIT OF WORK FOR REPO AND GENERIC
         services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddTransient<IUnitOfWork, UnitOfWorkRepository>();

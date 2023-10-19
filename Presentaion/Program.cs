@@ -7,9 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddDbContext<TatooWebContext>(options =>
-    options.UseSqlServer("Server=(local);Database=TatooWeb;User Id=sa;Password=12345;TrustServerCertificate=true;"));
+    options.UseSqlServer("Server=NHAPHAN;Database=TatooWeb;User Id=sa;Password=12345;TrustServerCertificate=true;"));
 
-builder.Services.AddService(builder.Configuration.GetConnectionString("TatooWebContext"));
+builder.Services.AddService();
 builder.Services.AddRazorPages();
 var app = builder.Build();
 
