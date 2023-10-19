@@ -1,12 +1,16 @@
 using BusinessLogic.Configuration;
+using DataAccess;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<TatooWebContext>(options =>
+    options.UseSqlServer("Server=(local);Database=TatooWeb;User Id=sa;Password=12345;TrustServerCertificate=true;"));
+
 builder.Services.AddService(builder.Configuration.GetConnectionString("TatooWebContext"));
 builder.Services.AddRazorPages();
-
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

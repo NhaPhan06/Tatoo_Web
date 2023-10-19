@@ -8,7 +8,6 @@ namespace Presentaion.Pages.Account;
 public class DeleteModel : PageModel
 {
     private readonly TatooWebContext _context;
-
     public DeleteModel(TatooWebContext context)
     {
         _context = context;

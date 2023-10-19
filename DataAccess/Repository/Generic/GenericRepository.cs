@@ -6,7 +6,7 @@ namespace DataAccess.Repository.Generic;
 
 public class GenericRepository<T> : IGenericRepository<T> where T : class
 {
-    public readonly TatooWebContext _context;
+    private readonly TatooWebContext _context;
     private readonly DbSet<T> _dbSet;
 
     public GenericRepository(TatooWebContext context)

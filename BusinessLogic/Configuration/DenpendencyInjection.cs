@@ -3,8 +3,10 @@ using BusinessLogic.Service;
 using DataAccess;
 using BusinessLogic.Mapping;
 using DataAccess.IRepository;
+using DataAccess.IRepository.Generic;
 using DataAccess.IRepository.UnitOfWork;
 using DataAccess.Repository;
+using DataAccess.Repository.Generic;
 using DataAccess.Repository.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -16,11 +18,12 @@ public static class DenpendencyInjection
     public static IServiceCollection AddService(this IServiceCollection services, string connectionString)
     {
         // CONNECT DB
-        services.AddDbContext<TatooWebContext>(options =>
-            options.UseSqlServer(connectionString));
+        /*services.AddDbContext<TatooWebContext>(options =>
+            options.UseSqlServer(connectionString));*/
         
         
         // SIGN UP UNIT OF WORK FOR REPO AND GENERIC
+        services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddTransient<IUnitOfWork, UnitOfWorkRepository>();
         
         // SIGN UP REPO
