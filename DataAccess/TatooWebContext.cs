@@ -16,6 +16,8 @@ namespace DataAccess
             : base(options)
         {
         }
+        
+        
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
         public virtual DbSet<ArtWork> ArtWorks { get; set; } = null!;
@@ -28,7 +30,16 @@ namespace DataAccess
         public virtual DbSet<Scheduling> Schedulings { get; set; } = null!;
         public virtual DbSet<Studio> Studios { get; set; } = null!;
         public virtual DbSet<VipMember> VipMembers { get; set; } = null!;
-
+        
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https: //go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+                optionsBuilder.UseSqlServer(
+                    "server =(local);database=TatooWeb;uid=sa;pwd=12345;trustServerCertificate=true;");
+            }
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>(entity =>

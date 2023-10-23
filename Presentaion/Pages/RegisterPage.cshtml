@@ -1,0 +1,78 @@
+﻿@page
+@model Presentaion.Pages.RegisterPage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Animated Login Form</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+<div class="background">
+<div class="box">
+    <div class="form">
+        <h2>Register</h2>
+        <div class="inputBox">
+            <input type="text" required="required" name="Username">
+            <span>UserName</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="password" required="required" name="HashPassword">
+            <span>PassWord</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="text" required="required" name="FirstName">
+            <span>First Name</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="text" required="required" name="Date">
+            <span>Last Name</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="text" required="required" name="LastName">
+            <span>Email</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="date" required="required" name="Date">
+            <span>Birthdate</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="text" required="required" name="Email">
+            <span>Email</span>
+            <i></i>
+        </div>
+        <div class="inputBox">
+            <input type="text" required="required" name="Phone">
+            <span>Phone</span>
+            <i></i>
+        </div>
+        <div class="inputRadio">
+            <span>Gender</span>
+            <input type="radio" class="Gender" value="male"> Male </input>
+            <input type="radio" class="Gender" value="female"> Female</input>
+        </div>
+        <div class="inputBox">
+            <input type="text" required="required" name="Address">
+            <span>Address</span>
+            <i></i>
+        </div>
+        <input type="submit" value="Register">
+    </div>
+</div>
+</div>
+</body>
+
+</html>
