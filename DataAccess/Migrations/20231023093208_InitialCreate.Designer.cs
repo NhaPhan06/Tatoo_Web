@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(TatooWebContext))]
-    [Migration("20231019034454_InitialCreate")]
+    [Migration("20231023093208_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
