@@ -15,8 +15,11 @@ namespace BusinessLogic.Configuration;
 
 public static class DenpendencyInjection
 {
-    public static IServiceCollection AddService(this IServiceCollection services)
+    public static IServiceCollection AddService(this IServiceCollection services, string databaseConnection)
     {
+        // CONNECT DB
+        services.AddDbContext<TatooWebContext>(options => { options.UseSqlServer(databaseConnection); });
+        
         // SIGN UP UNIT OF WORK FOR REPO AND GENERIC
         services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddTransient<IUnitOfWork, UnitOfWorkRepository>();
@@ -38,9 +41,20 @@ public static class DenpendencyInjection
 
         // SIGN UP SERVICE
         services.AddTransient<IAccountService, AccountService>();
+        services.AddTransient<IArtistService, ArtistService>();
+        services.AddTransient<IArtworkService, ArtworkService>();
+        services.AddTransient<IBookingService, BookingService>();
+        services.AddTransient<ICustomerService, CustomerService>();
+        services.AddTransient<IDiscountService, DiscountService>();
+        services.AddTransient<IEquipmentService, EquipmentService>();
+        services.AddTransient<IImageService, ImageService>();
+        services.AddTransient<ISchedulingService, SchedulingService>();
+        services.AddTransient<IStudioService, StudioService>();
+        services.AddTransient<IVipmemberService, VipmemberService>();
         
         //AUTOMAPPER
         services.AddAutoMapper(typeof(Mapper).Assembly);
+        
         return services;
     }
 }
