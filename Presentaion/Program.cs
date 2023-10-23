@@ -5,11 +5,13 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(builder.Environment.ContentRootPath)
+    .AddJsonFile("appsettings.Development.json")
+    .Build();
 
-builder.Services.AddDbContext<TatooWebContext>(options =>
-    options.UseSqlServer("Server=NHAPHAN;Database=TatooWeb;User Id=sa;Password=12345;TrustServerCertificate=true;"));
-
-builder.Services.AddService();
+string connString = builder.Configuration.GetConnectionString("DatabaseConnection");
+builder.Services.AddService(connString);
 builder.Services.AddRazorPages();
 var app = builder.Build();
 

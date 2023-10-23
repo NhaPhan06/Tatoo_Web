@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using DataAccess.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.Extensions.Configuration;
 
 namespace DataAccess
 {
@@ -29,25 +28,6 @@ namespace DataAccess
         public virtual DbSet<Scheduling> Schedulings { get; set; } = null!;
         public virtual DbSet<Studio> Studios { get; set; } = null!;
         public virtual DbSet<VipMember> VipMembers { get; set; } = null!;
-
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer(GetConnectionString());
-            }
-        }
-        private string GetConnectionString()
-        {
-            IConfiguration config = new ConfigurationBuilder()
-             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", true, true)
-            .Build();
-            var strConn = config["ConnectString:DatabaseConnection"];
-
-            return strConn;
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
