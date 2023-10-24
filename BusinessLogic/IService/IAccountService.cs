@@ -1,8 +1,12 @@
 ﻿using BusinessLogic.DTOS.Account;
+using DataAccess.DataAccess;
 
 namespace BusinessLogic.IService;
 
 public interface IAccountService
 {
-    void CreateStudioAccount(CreateAccount account);
+    Task CreateStudioAccount(CreateStudio account);
+    Task CreateCustomerAccount(CreateCustomer account);
+
+    Task<Account> Login(String UserName, String Pass);
 }

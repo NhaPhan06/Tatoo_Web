@@ -4,18 +4,18 @@ using DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace Presentaion.Pages.Account;
+namespace Presentaion.Pages.Register;
 
-public class CreateModel : PageModel
+public class StudioRegister : PageModel
 {
     private IAccountService _accountService;
 
-    public CreateModel(IAccountService accountService)
+    public StudioRegister(IAccountService accountService)
     {
         _accountService = accountService;
     }
 
-    [BindProperty] public CreateStudio CreateAccount { get; set; } = default!;
+    [BindProperty] public CreateStudio CreateStudio { get; set; } = default!;
 
     public IActionResult OnGet()
     {
@@ -26,7 +26,7 @@ public class CreateModel : PageModel
     // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
     public async Task<IActionResult> OnPostAsync()
     {
-        _accountService.CreateStudioAccount(CreateAccount);
+        _accountService.CreateStudioAccount(CreateStudio);
         return RedirectToPage("./Index");
     }
 }

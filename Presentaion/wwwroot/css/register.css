@@ -7,7 +7,7 @@
     font-family: 'Poppins', sans-serif;
 }
 .background{
-    background-image: url('Image/LoginBackground.jpg');
+    //background-image: url('Image/LoginBackground.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -21,7 +21,7 @@
 .box {
     position: relative;
     width: 380px;
-    height: 420px;
+    height: 1000px;
     background-color: #fefefe;
     border-radius: 8px;
     overflow: hidden;

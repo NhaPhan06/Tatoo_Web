@@ -5,7 +5,7 @@ namespace DataAccess.Repository.UnitOfWork;
 
 public class UnitOfWorkRepository : IUnitOfWork
 {
-    private readonly TatooWebContext _context;
+    public readonly TatooWebContext _context;
 
     public UnitOfWorkRepository(TatooWebContext context)
     {
