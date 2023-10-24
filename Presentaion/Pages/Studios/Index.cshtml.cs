@@ -7,27 +7,31 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DataAccess;
 using DataAccess.DataAccess;
+using BusinessLogic.IService;
+using BusinessLogic.Service;
 
 namespace Presentaion.Pages.Studios
 {
     public class IndexModel : PageModel
     {
-        private readonly DataAccess.TatooWebContext _context;
+        
+        [BindProperty(SupportsGet = true)]
+        public string SearchQuery { get; set; }
+        private readonly IStudioService _studioService;
 
-        public IndexModel(DataAccess.TatooWebContext context)
+        public IndexModel(IStudioService studioService)
         {
-            _context = context;
+            _studioService = studioService;
         }
 
-        public IList<Studio> Studio { get;set; } = default!;
+        public List<Studio> Studio { get;set; } = default!;
 
-        public async Task OnGetAsync()
+        public IActionResult OnGet()
         {
-            if (_context.Studios != null)
-            {
-                Studio = await _context.Studios
-                .Include(s => s.Account).ToListAsync();
-            }
+
+            Studio = _studioService.Search(SearchQuery);
+            return Page();
         }
+
     }
 }

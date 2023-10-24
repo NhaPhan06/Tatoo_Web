@@ -7,28 +7,25 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DataAccess;
 using DataAccess.DataAccess;
+using BusinessLogic.IService;
 
 namespace Presentaion.Pages.Studios
 {
     public class DetailsModel : PageModel
     {
-        private readonly DataAccess.TatooWebContext _context;
+        private readonly IStudioService _studioService;
 
-        public DetailsModel(DataAccess.TatooWebContext context)
+        public DetailsModel(IStudioService studioService)
         {
-            _context = context;
+            _studioService = studioService;
         }
 
-      public Studio Studio { get; set; } = default!; 
+        public Studio Studio { get; set; } = default!; 
 
-        public async Task<IActionResult> OnGetAsync(Guid? id)
+        public IActionResult OnGet(Guid id)
         {
-            if (id == null || _context.Studios == null)
-            {
-                return NotFound();
-            }
 
-            var studio = await _context.Studios.FirstOrDefaultAsync(m => m.Id == id);
+            var studio =  _studioService.GetById(id);
             if (studio == null)
             {
                 return NotFound();

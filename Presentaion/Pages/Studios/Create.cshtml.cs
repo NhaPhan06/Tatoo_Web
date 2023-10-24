@@ -7,21 +7,21 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DataAccess;
 using DataAccess.DataAccess;
+using BusinessLogic.IService;
 
 namespace Presentaion.Pages.Studios
 {
     public class CreateModel : PageModel
     {
-        private readonly DataAccess.TatooWebContext _context;
+        private readonly IStudioService _studioService;
 
-        public CreateModel(DataAccess.TatooWebContext context)
+        public CreateModel(IStudioService studioService)
         {
-            _context = context;
+            _studioService = studioService;
         }
 
         public IActionResult OnGet()
         {
-        ViewData["AccountId"] = new SelectList(_context.Accounts, "Id", "Id");
             return Page();
         }
 
@@ -30,15 +30,9 @@ namespace Presentaion.Pages.Studios
         
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
-          if (!ModelState.IsValid || _context.Studios == null || Studio == null)
-            {
-                return Page();
-            }
-
-            _context.Studios.Add(Studio);
-            await _context.SaveChangesAsync();
+          _studioService.Create(Studio);
 
             return RedirectToPage("./Index");
         }

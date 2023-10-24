@@ -7,29 +7,26 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using DataAccess;
 using DataAccess.DataAccess;
+using BusinessLogic.IService;
 
 namespace Presentaion.Pages.Studios
 {
     public class DeleteModel : PageModel
     {
-        private readonly DataAccess.TatooWebContext _context;
+        private readonly IStudioService _studioService;
 
-        public DeleteModel(DataAccess.TatooWebContext context)
+        public DeleteModel(IStudioService studioService)
         {
-            _context = context;
+            _studioService = studioService;
         }
 
         [BindProperty]
       public Studio Studio { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(Guid? id)
+        public IActionResult OnGet(Guid id)
         {
-            if (id == null || _context.Studios == null)
-            {
-                return NotFound();
-            }
-
-            var studio = await _context.Studios.FirstOrDefaultAsync(m => m.Id == id);
+            
+            var studio = _studioService.GetById(id);
 
             if (studio == null)
             {
@@ -42,20 +39,10 @@ namespace Presentaion.Pages.Studios
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(Guid? id)
+        public IActionResult OnPost(Guid id)
         {
-            if (id == null || _context.Studios == null)
-            {
-                return NotFound();
-            }
-            var studio = await _context.Studios.FindAsync(id);
-
-            if (studio != null)
-            {
-                Studio = studio;
-                _context.Studios.Remove(Studio);
-                await _context.SaveChangesAsync();
-            }
+            
+            _studioService.Delete(id);
 
             return RedirectToPage("./Index");
         }

@@ -8,71 +8,46 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DataAccess;
 using DataAccess.DataAccess;
+using BusinessLogic.IService;
 
 namespace Presentaion.Pages.Studios
 {
     public class EditModel : PageModel
     {
-        private readonly DataAccess.TatooWebContext _context;
+        private readonly IStudioService _studioService;
 
-        public EditModel(DataAccess.TatooWebContext context)
+        public EditModel(IStudioService studioService)
         {
-            _context = context;
+            _studioService = studioService;
         }
 
         [BindProperty]
         public Studio Studio { get; set; } = default!;
 
-        public async Task<IActionResult> OnGetAsync(Guid? id)
+        public IActionResult OnGet(Guid id)
         {
-            if (id == null || _context.Studios == null)
-            {
-                return NotFound();
-            }
 
-            var studio =  await _context.Studios.FirstOrDefaultAsync(m => m.Id == id);
-            if (studio == null)
-            {
-                return NotFound();
-            }
-            Studio = studio;
-           ViewData["AccountId"] = new SelectList(_context.Accounts, "Id", "Id");
+            Studio = _studioService.GetById(id);
             return Page();
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see https://aka.ms/RazorPagesCRUD.
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
-
-            _context.Attach(Studio).State = EntityState.Modified;
-
+            
             try
             {
-                await _context.SaveChangesAsync();
+                _studioService.Update(Studio.Id, Studio);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (Exception ex)
             {
-                if (!StudioExists(Studio.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                TempData["ErrorMessage"] = ex.Message;
             }
 
-            return RedirectToPage("./Index");
+            return Page();
         }
 
-        private bool StudioExists(Guid id)
-        {
-          return (_context.Studios?.Any(e => e.Id == id)).GetValueOrDefault();
-        }
+        
     }
 }
