@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Service
 {
-    public class ArtworkService : IArtworkService
-    {
+public class ArtworkService : IArtworkService
+{
     }
 }

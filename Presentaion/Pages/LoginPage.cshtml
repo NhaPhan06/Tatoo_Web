@@ -1,0 +1,42 @@
+﻿@page
+@model Presentaion.Pages.Login.LoginPage
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Animated LoginPage Form</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+
+<body>
+    <div class="background">
+        <div class="box">
+            <form method="post">
+            <div class="form">
+                <h2>Sign in</h2>
+                <div class="inputBox">
+                    <input type="text" id="Username" name="Username" class="form-control" required>
+                    <span>UserName</span>
+                    <i></i>
+                </div>
+                <div class="inputBox">
+                    <input type="password" id="Password" name="Password" class="form-control" required>
+                    <span>PassWord</span>
+                    <i></i>
+                </div>
+                <div class="links">
+                    <a href="/RegisterPage">Regester</a>
+                </div>    
+                <input style="align-self: center;" type="submit" value="LoginPage" class="btn btn-primary" >
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

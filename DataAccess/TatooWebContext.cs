@@ -17,6 +17,8 @@ namespace DataAccess
             : base(options)
         {
         }
+        
+        
 
         public virtual DbSet<Account> Accounts { get; set; } = null!;
         public virtual DbSet<ArtWork> ArtWorks { get; set; } = null!;
