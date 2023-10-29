@@ -55,6 +55,9 @@ public static class DenpendencyInjection
         //AUTOMAPPER
         services.AddAutoMapper(typeof(Mapper).Assembly);
         
+        
+
+        
         return services;
     }
 }
