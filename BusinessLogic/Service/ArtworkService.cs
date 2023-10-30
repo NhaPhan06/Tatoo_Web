@@ -9,5 +9,6 @@ namespace BusinessLogic.Service
 {
 public class ArtworkService : IArtworkService
 {
+}
     }
 }
