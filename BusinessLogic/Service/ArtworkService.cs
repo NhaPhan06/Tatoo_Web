@@ -1,8 +1,13 @@
 ﻿using BusinessLogic.IService;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace BusinessLogic.Service;
-
+namespace BusinessLogic.Service
+{
 public class ArtworkService : IArtworkService
 {
-    
+    }
 }
