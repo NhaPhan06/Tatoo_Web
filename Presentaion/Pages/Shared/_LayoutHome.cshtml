@@ -44,17 +44,29 @@
 	<script>
 		new WOW().init();
 	</script>
-
+	<style>
+		.header{
+			background: url(../images/banner.jpg)no-repeat center top;
+			background-size: 100% 100%;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			background-position: center;
+			position: relative;
+			min-height: 500px;
+		}
+	</style>
 </head>
 <body>
 	<div>@RenderBody()</div>
-	<header id="header">
+	<header id="header1">
 		<!-- Header Part -->
 		<!-- this is dummy heading for W3-Validation approval you can remove it if you want -->
 		<h2 class="w3-validation">For W3 Validation</h2>
 		<!-- this is dummy heading for W3-Validation approval you can remove it if you want -->
 
-		<div class="header">
+		<div class="header" style="">
 			<div class="container">
 				<!-- start-top-nav -->
 				<div class="top-nav">
@@ -411,7 +423,7 @@
 				<div class="team">
 					<div class='team_div'>
 						<div class="col-md-4 team-grid-1 wow fadeInLeft" data-wow-delay="0.3s">
-							<a class="button-one team_btn button-type-one button-box">Team</a>
+							<a href="#" class="button-one team_btn button-type-one button-box">Artist</a>
 						</div>
 						<div class="col-md-4 team-grid-2 wow fadeInUp" data-wow-delay="0.0s"> </div>
 						<div class="col-md-4 team-grid-3 wow fadeInRight" data-wow-delay="0.3s">
