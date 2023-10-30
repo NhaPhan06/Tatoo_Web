@@ -7,15 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Pages\ArtWork\**" />
-    <Content Remove="Pages\ArtWork\**" />
-    <EmbeddedResource Remove="Pages\ArtWork\**" />
-    <None Remove="Pages\ArtWork\**" />
+    <Folder Include="Pages\Account\" />
+    <Folder Include="Pages\Image\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Account\" />
-    <Folder Include="Pages\Image\" />
+    <None Include="Pages\ArtWork\Create.cshtml" />
+    <None Include="Pages\ArtWork\Delete.cshtml" />
+    <None Include="Pages\ArtWork\Details.cshtml" />
+    <None Include="Pages\ArtWork\Edit.cshtml" />
+    <None Include="Pages\ArtWork\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
