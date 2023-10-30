@@ -15,7 +15,7 @@ public class CreateModel : PageModel
         _accountService = accountService;
     }
 
-    [BindProperty] public CreateAccount CreateAccount { get; set; } = default!;
+    [BindProperty] public CreateStudio CreateAccount { get; set; } = default!;
 
     public IActionResult OnGet()
     {

@@ -8,7 +8,7 @@
 }
 
 .background{
-    background-image: url('Image/LoginBackground.jpg');
+    //background-image: url('Image/LoginBackground.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -35,7 +35,7 @@
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    background: linear-gradient(0deg, transparent, #022dda, #45f3ff);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
@@ -47,7 +47,7 @@
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    background: linear-gradient(0deg, transparent, #022dd8, #45f3ff);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
@@ -113,7 +113,7 @@
 
 .inputBox input:valid~span,
 .inputBox input:focus~span {
-    color: #45f3ff;
+    color: #022dda;
     transform: translateX(0px) translateY(-34px);
     font-size: 0.75em;
 }
@@ -124,7 +124,7 @@
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #45f3ff;
+    background: #022dd8;
     border-radius: 4px;
     transition: 0.5s;
     pointer-events: none;
@@ -150,13 +150,13 @@
 
 .links a:hover,
 .links a:nth-child(2) {
-    color: #45f3ff;
+    color: #0000f5;
 }
 
 input[type="submit"] {
     border: none;
     outline: none;
-    background: #45f3ff;
+    background: #022dda;
     padding: 11px 25px;
     width: 100px;
     margin-top: 10px;

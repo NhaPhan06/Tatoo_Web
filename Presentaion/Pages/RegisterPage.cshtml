@@ -6,7 +6,7 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8">
@@ -16,63 +16,61 @@
 
 <body>
 <div class="background">
-<div class="box">
-    <div class="form">
-        <h2>Register</h2>
-        <div class="inputBox">
-            <input type="text" required="required" name="Username">
-            <span>UserName</span>
-            <i></i>
+    <div class="box">
+        <form method="post">
+        <div class="form">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h2>Register</h2>
+            <div class="inputBox" class="form-group">
+                <input asp-for="CreateCustomer.UserName" required="required">
+                <span >UserName</span>
+                <i></i>
+            </div>
+            <div class="inputBox" class="form-group">
+                <input asp-for="CreateCustomer.Password" required="required">
+                <span>PassWord</span>
+                <i></i>
+            </div>
+            <div class="inputBox" class="form-group">
+                <input asp-for="CreateCustomer.FirstName" required="required">
+                <span>FirstName</span>
+                <i></i>
+            </div>
+            <div class="inputBox" class="form-group">
+                <input asp-for="CreateCustomer.LastName" required="required">
+                <span>LastName</span>
+                <i></i>
+            </div>
+            <div class="inputBox" class="form-group">
+                <input input asp-for="CreateCustomer.Email" required="required">
+                <span>Email</span>
+                <span asp-validation-for="CreateCustomer.Email" class="text-danger"></span>
+                <i></i>
+            </div>
+            <div class="inputBox" class="form-group">
+                <label asp-for="CreateCustomer.DateOfBirth" class="control-label"></label>
+                <input asp-for="CreateCustomer.DateOfBirth.Date" type="date" class="form-control"/>
+                <span asp-validation-for="CreateCustomer.DateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="inputBox" class="form-group">
+                <input asp-for="CreateCustomer.Phone" required="required">
+                <span>Phone</span>
+                <i></i>
+                <span asp-validation-for="CreateCustomer.Phone" class="text-danger"></span>
+            </div>
+            <div class="inputBox" class="form-group">
+                <input asp-for="CreateCustomer.Address" required="required">
+                <span>Address</span>
+                <i></i>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary">
+            </div>
         </div>
-        <div class="inputBox">
-            <input type="password" required="required" name="HashPassword">
-            <span>PassWord</span>
-            <i></i>
-        </div>
-        <div class="inputBox">
-            <input type="text" required="required" name="FirstName">
-            <span>First Name</span>
-            <i></i>
-        </div>
-        <div class="inputBox">
-            <input type="text" required="required" name="Date">
-            <span>Last Name</span>
-            <i></i>
-        </div>
-        <div class="inputBox">
-            <input type="text" required="required" name="LastName">
-            <span>Email</span>
-            <i></i>
-        </div>
-        <div class="inputBox">
-            <input type="date" required="required" name="Date">
-            <span>Birthdate</span>
-            <i></i>
-        </div>
-        <div class="inputBox">
-            <input type="text" required="required" name="Email">
-            <span>Email</span>
-            <i></i>
-        </div>
-        <div class="inputBox">
-            <input type="text" required="required" name="Phone">
-            <span>Phone</span>
-            <i></i>
-        </div>
-        <div class="inputRadio">
-            <span>Gender</span>
-            <input type="radio" class="Gender" value="male"> Male </input>
-            <input type="radio" class="Gender" value="female"> Female</input>
-        </div>
-        <div class="inputBox">
-            <input type="text" required="required" name="Address">
-            <span>Address</span>
-            <i></i>
-        </div>
-        <input type="submit" value="Register">
+        </form>
     </div>
 </div>
-</div>
+
 </body>
 
 </html>

@@ -21,10 +21,27 @@ public class AccountService : IAccountService
     }
 
     
-    public void CreateStudioAccount(CreateAccount account)
+    public async Task CreateStudioAccount(CreateStudio account)
     {
         var company = _mapper.Map<Studio>(account);
         _unitOfWork.Studio.Add(company);
         _unitOfWork.Save();
+    }
+    
+    public async Task CreateCustomerAccount(CreateCustomer account)
+    {
+        var c = _mapper.Map<Customer>(account);
+        _unitOfWork.Customer.Add(c);
+        _unitOfWork.Save();
+    }
+
+    public async Task<Account> Login(string UserName, string Pass)
+    {
+        var account =  await _unitOfWork.Account.GetAccount(UserName, Pass);
+        if (account != null)
+        {
+            return account;
+        }
+        return null;
     }
 }
