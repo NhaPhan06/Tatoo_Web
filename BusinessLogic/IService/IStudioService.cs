@@ -4,6 +4,9 @@ namespace BusinessLogic.IService;
 
 public interface IStudioService
 {
-    Task<Studio> getStudio(Guid guid);
-    
+    List<Studio> Search(string name);
+    Studio GetById(Guid id);
+    Studio Update(Guid id, Studio studio);
+    Studio Delete(Guid id);
+    Studio Create(Studio studio);
 }
