@@ -19,7 +19,7 @@ public class StudioDetail : PageModel
 
     public async Task<IActionResult> OnGetAsync(Guid id)
     {
-        studio = await _studioService.getStudio(id);
+        studio = _studioService.GetById(id);
         return Page();
     }
 }
