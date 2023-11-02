@@ -2,75 +2,82 @@
 @model Presentaion.Pages.RegisterPage
 
 @{
-    Layout = null;
+    Layout = "_LayoutLogin";
 }
 
-<!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
 
-<head>
+<section id="signup" class="mx-auto my-lg-5 my-5">
+
+@*<head>
     <meta charset="utf-8">
     <title>Animated Login Form</title>
     <link rel="stylesheet" href="css/register.css">
-</head>
+</head>*@
 
-<body>
-<div class="background">
-    <div class="box">
+    <div class="head">
+        <h1>Register</h1>
+        <span>Welcome</span>
+    </div>
+    <div class="row justify-content-center">
+        <div class="login-wrap col-md-10 col-lg-10 col-10">
         <form method="post">
-        <div class="form">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <h2>Register</h2>
-            <div class="inputBox" class="form-group">
+        
+            
+            
+            <div class="inputBox" class="form-group my-3">
                 <input asp-for="CreateCustomer.UserName" required="required">
                 <span >UserName</span>
                 <i></i>
             </div>
-            <div class="inputBox" class="form-group">
+             <div class="inputBox" class="form-group my-3">
                 <input asp-for="CreateCustomer.Password" required="required">
                 <span>PassWord</span>
                 <i></i>
             </div>
-            <div class="inputBox" class="form-group">
+            <div class="inputBox" class="form-group my-3">
                 <input asp-for="CreateCustomer.FirstName" required="required">
                 <span>FirstName</span>
                 <i></i>
             </div>
-            <div class="inputBox" class="form-group">
+            <div class="inputBox" class="form-group my-3">
                 <input asp-for="CreateCustomer.LastName" required="required">
                 <span>LastName</span>
                 <i></i>
             </div>
-            <div class="inputBox" class="form-group">
+            <div class="inputBox" class="form-group my-3">
                 <input input asp-for="CreateCustomer.Email" required="required">
                 <span>Email</span>
                 <span asp-validation-for="CreateCustomer.Email" class="text-danger"></span>
                 <i></i>
             </div>
-            <div class="inputBox" class="form-group">
+            <div class="inputBox" class="form-group my-3">
                 <label asp-for="CreateCustomer.DateOfBirth" class="control-label"></label>
                 <input asp-for="CreateCustomer.DateOfBirth.Date" type="date" class="form-control"/>
                 <span asp-validation-for="CreateCustomer.DateOfBirth" class="text-danger"></span>
             </div>
-            <div class="inputBox" class="form-group">
+            <div class="inputBox" class="form-group my-3">
                 <input asp-for="CreateCustomer.Phone" required="required">
                 <span>Phone</span>
                 <i></i>
                 <span asp-validation-for="CreateCustomer.Phone" class="text-danger"></span>
             </div>
-            <div class="inputBox" class="form-group">
+            <div class="inputBox" class="form-group my-3">
                 <input asp-for="CreateCustomer.Address" required="required">
                 <span>Address</span>
                 <i></i>
             </div>
-            <div class="form-group">
+            <div class="d-flex justify-content-start mt-4">
                 <input type="submit" value="Create" class="btn btn-primary">
             </div>
-        </div>
+        
         </form>
+        </div>
+        
     </div>
-</div>
+</section>
 
-</body>
-
-</html>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+    }
