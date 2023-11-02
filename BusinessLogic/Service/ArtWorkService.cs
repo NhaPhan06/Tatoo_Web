@@ -1,5 +1,5 @@
-﻿using BusinessLogic.IService;
-using DataAccess.DataAccess;
+﻿using AutoMapper;
+using BusinessLogic.IService;
 using DataAccess.IRepository.UnitOfWork;
 using System;
 using System.Collections.Generic;
@@ -9,18 +9,19 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic.Service
 {
-    internal class ArtWorkService : IArtWorkSevice
+    public class ArtworkService : IArtworkService
     {
-        private IUnitOfWork _unitOfWork;
-        public ArtWorkService(IUnitOfWork unitOfWork) 
-        {
-        _unitOfWork = unitOfWork;
-        }
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
 
-        public IEnumerable<ArtWork> GetArtWorks()
+        public ArtworkService(IMapper mapper, IUnitOfWork unitOfWork)
         {
-           var list = _unitOfWork.ArtWork.GetAll();
-            return list;
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
+        }
+        public async Task GetAllArtWork()
+        {
+
         }
     }
 }

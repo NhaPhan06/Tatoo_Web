@@ -52,7 +52,7 @@ public static class DenpendencyInjection
         services.AddTransient<IStudioService, StudioService>();
         services.AddTransient<IVipmemberService, VipmemberService>();
         
-        services.AddTransient<IArtWorkSevice, ArtWorkService>();
+        
         //AUTOMAPPER
         services.AddAutoMapper(typeof(Mapper).Assembly);
         
