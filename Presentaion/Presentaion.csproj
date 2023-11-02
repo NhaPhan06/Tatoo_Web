@@ -9,6 +9,7 @@
   <ItemGroup>
     <Folder Include="Pages\Account\" />
     <Folder Include="Pages\Image\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
   <ItemGroup>

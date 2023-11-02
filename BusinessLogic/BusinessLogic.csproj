@@ -20,5 +20,10 @@
     </ItemGroup>
 
 
+    <ItemGroup>
+      <Folder Include="DTOS\Artwork\" />
+    </ItemGroup>
+
+
 
 </Project>
