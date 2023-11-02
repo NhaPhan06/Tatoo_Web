@@ -2,29 +2,81 @@
 @model Presentaion.Pages.Artwork.IndexModel
 @{
 }
-<header id="header"> <!-- Header Part -->
+
+
+<!DOCTYPE HTML>
+<html>
+		<head>
+		
+		    <meta charset="utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+			
+			<!-- Title -->
+			<title>InkTatto</title>
+			
+			<!-- Bootstrap & Font-Awesome CSS -->
+			<link rel="stylesheet" href="/css/bootstrap.min.css" type='text/css'>
+			<link rel="stylesheet" href="/css/font-awesome.min.css" type='text/css'>
+			
+			<!-- Custom CSS -->
+			<link rel="stylesheet" href="/css/style.css" type='text/css'>
+			<link rel="stylesheet" href="/css/prettyPhoto.css" type='text/css'>
+			<link rel="stylesheet" href="/css/responsive.css" type='text/css'>
+			
+			<!-- Animation CSS -->
+			<link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
+			
+			<!-- Google Webfont -->
+			<link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,700' rel="stylesheet" type='text/css'>
+			
+			<!-- js files & script -->
+			<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+			<script type="text/javascript" src="js/hover_pack.js"></script>
+			<script type="text/javascript">
+								jQuery(document).ready(function($) {
+									$(".scroll").click(function(event){		
+										event.preventDefault();
+										$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+									});
+								});
+			</script>
+			<script type="text/javascript" src="/js/move-top.js"></script>
+			<script type="text/javascript" src="/js/easing.js"></script>
+			<script type="text/javascript" src="/js/modernizr.js"></script>
+			<script type="text/javascript" src="/js/retina.js"></script>
+			<script type="text/javascript" src="/js/jquery.prettyPhoto.js"></script>
+			<script type="text/javascript" src="/js/wow.min.js"></script>
+			<script>
+				 new WOW().init();
+			</script>
+			
+		</head>
+		<body>
+		
+            <header id="header"> <!-- Header Part -->
 			
 			<!-- this is dummy heading for W3-Validation approval you can remove it if you want -->
 			<h2 class="w3-validation">For W3 Validation</h2>
 			<!-- this is dummy heading for W3-Validation approval you can remove it if you want -->
 			
-					<div class="header">
+					<div class="header">	
 						<div class="container">
 								<!-- start-top-nav -->
 								<div class="top-nav">
 									<div class="top-header">
 										<div class="responsive-logo">
-										   <a href="index.html"><img src="images/logo.png" alt=""/></a>
+										   <a href="index.html"><img src="/images/logo.png" alt=""/></a>
 										</div>
 									</div>
 									<nav class="nav">
-										<a id="menu-toggle" class="anchor-link" href="#"><img src="images/nav.png" alt="" /></a>
+										<a id="menu-toggle" class="anchor-link" href="#"><img src="/images/nav.png" alt="" /></a>
 										<ul class="nav-list" id="menu">
 											<li><a href="#">Home</a></li>
 											<li><a href="#about" class="scroll">About</a></li>
-											<li><a href="#gallery" class="scroll">Gallery</a></li>
+											<li><a href="Gallery.html" target="_blank">Gallery</a></li>
 											<!-- logo -->
-											 <li class="logo"><a href="index.html"><img src="images/logo.png" alt=""/></a></li>
+											 <li class="logo"><a href="index.html"><img src="/images/logo.png" alt=""/></a></li>
 											<!-- logo -->
 											<li><a href="#faq" class="scroll">Faq</a></li>
 											<li><a href="#find" class="scroll">Find Us</a></li>
@@ -60,7 +112,7 @@
 							</div>
 							<div class="col-md-6 about_right wow fadeInUp" data-wow-delay="0.0s">
 								  <div class="about_text">
-										<img src="images/tatto.png" class="img-responsive" alt=""/>
+										<img src="/images/tatto.png" class="img-responsive" alt=""/>
 										<h3>Aliquam ac justo interdum, elementum ligula et, condimentum orci. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h3>
 										<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc risus eros, ultricies quis erat sit amet, elementum vulputate lorem. Sed at lacinia lectus, quis blandit libero. </p>
 										<p>Quisque ac malesuada lectus. Proin gravida feugiat commodo. Phasellus fermentum sem ut felis vehicula aliquet. Donec rhoncus, mi et euismod dictum, purus lorem vehicula justo, a iaculis mi nulla et risus.</p>
@@ -83,12 +135,12 @@
 								<ul class="about_gallery">
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 1 -->
-												<img src="images/gallery-one-img1.jpg" class="gallery-one-image img-responsive" alt=""/> 
+												<img src="/images/gallery-one-img1.jpg" class="gallery-one-image img-responsive" alt=""/> 
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/1.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/1.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>												
 															<ul class="popup_links popup-links-button">
@@ -102,12 +154,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 2 -->
-												<img src="images/gallery-one-img2.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img2.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/2.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/2.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -121,12 +173,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 3 -->
-												<img src="images/gallery-one-img3.jpg" class="gallery-one-image img-responsive" alt=""/> 
+												<img src="/images/gallery-one-img3.jpg" class="gallery-one-image img-responsive" alt=""/> 
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-														    <a href="images/about-gallery/3.jpg" rel="prettyPhoto[pp_gal]">
+														    <a href="/images/about-gallery/3.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -140,12 +192,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 4 -->
-												<img src="images/gallery-one-img4.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img4.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/4.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/4.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -159,12 +211,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 5 -->
-												<img src="images/gallery-one-img5.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img5.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/5.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/5.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -178,12 +230,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 6 -->
-												<img src="images/gallery-one-img6.jpg" class="gallery-one-image img-responsive" alt=""/> 
+												<img src="/images/gallery-one-img6.jpg" class="gallery-one-image img-responsive" alt=""/> 
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/6.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/6.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -204,12 +256,12 @@
 								<ul class="about_gallery wow fadeInRight" data-wow-delay="0.3s">
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 7 -->
-												<img src="images/gallery-one-img7.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img7.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-														<a href="images/about-gallery/7.jpg" rel="prettyPhoto[pp_gal]">
+														<a href="/images/about-gallery/7.jpg" rel="prettyPhoto[pp_gal]">
 															<button class="zooming about-zooming md-trigger">
-																	<img src="images/zoom.png" alt=""/>
+																	<img src="/images/zoom.png" alt=""/>
 															</button>
 														</a>
 															<ul class="popup_links popup-links-button">
@@ -223,12 +275,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 8 -->
-												<img src="images/gallery-one-img8.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img8.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/8.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/8.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -242,12 +294,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 9 -->
-												<img src="images/gallery-one-img9.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img9.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/9.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/9.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -261,12 +313,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 10 -->
-												<img src="images/gallery-one-img10.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img10.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/10.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/10.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -280,12 +332,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 11 -->
-												<img src="images/gallery-one-img11.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img11.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-														<a href="images/about-gallery/11.jpg" rel="prettyPhoto[pp_gal]">
+														<a href="/images/about-gallery/11.jpg" rel="prettyPhoto[pp_gal]">
 															<button class="zooming about-zooming md-trigger">
-																	<img src="images/zoom.png" alt=""/>
+																	<img src="/images/zoom.png" alt=""/>
 															</button>
 														</a>
 															<ul class="popup_links popup-links-button">
@@ -299,12 +351,12 @@
 									</li>
 									<li>
 										<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery one image no : 12 -->
-												<img src="images/gallery-one-img12.jpg" class="gallery-one-image img-responsive" alt=""/>
+												<img src="/images/gallery-one-img12.jpg" class="gallery-one-image img-responsive" alt=""/>
 												<div class="b-wrapper">
 														<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/about-gallery/12.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/about-gallery/12.jpg" rel="prettyPhoto[pp_gal]">
 																<button class="zooming about-zooming md-trigger">
-																		<img src="images/zoom.png" alt=""/>
+																		<img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 															<ul class="popup_links popup-links-button">
@@ -409,7 +461,7 @@
 				</div>
 			</section>
 			
-			@* <section id="twitter-section"> <!-- Twitter Section -->
+			<section id="twitter-section"> <!-- Twitter Section -->
 			
 			<!-- this is dummy heading for W3-Validation approval you can remove it if you want -->
 			<h2 class="w3-validation">For W3 Validation</h2>
@@ -419,11 +471,11 @@
 						<div class="container">
 							<div class="row">
 							    <i class="tw_icon"> </i>
-								<p>RT @collis: Trade growth ideas with other founders. Look for ways to cross promote. Small startups today may be big friends later. (9/10)  2 days ago</p>
+								<p>RT collis: Trade growth ideas with other founders. Look for ways to cross promote. Small startups today may be big friends later. (9/10)  2 days ago</p>
 							</div>
 						</div>
                     </div>
-			</section> *@
+			</section>
 			
 			<section id="gallery-two-image-section"> <!-- Gallery Two Section -->
 			
@@ -440,12 +492,12 @@
 											<ul class="gallery-grid-one gallery-grid-box">
 												<li>
 													<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 1 -->
-															<img src="images/gallery-two-img1.jpg" class="gallery-two-image img-responsive" alt=""/>
+															<img src="/images/gallery-two-img1.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 																<div class="b-animate b-from-left b-delay03 ">
-																	<a href="images/photo-gallery/image-1.jpg" rel="prettyPhoto[pp_gal]">
+																	<a href="/images/photo-gallery/image-1.jpg" rel="prettyPhoto[pp_gal]">
 																		<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																		</button>
 																	</a>
 																	<ul class="popup_links gallery-two-popup-links">
@@ -459,12 +511,12 @@
 												</li>
 												<li>
 													<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 2 -->
-															<img src="images/gallery-two-img2.jpg" class="gallery-two-image img-responsive" alt=""/>
+															<img src="/images/gallery-two-img2.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 																<div class="b-animate b-from-left b-delay03 ">
-																	<a href="images/photo-gallery/image-2.jpg" rel="prettyPhoto[pp_gal]">
+																	<a href="/images/photo-gallery/image-2.jpg" rel="prettyPhoto[pp_gal]">
 																		<button class="zooming md-trigger">
-																				<img src="images/zoom.png" alt=""/>
+																				<img src="/images/zoom.png" alt=""/>
 																		</button>
 																	</a>
 																	<ul class="popup_links gallery-two-popup-links">
@@ -478,12 +530,12 @@
 												</li>
 												<li>
 													<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 3 -->
-															<img src="images/gallery-two-img3.jpg" class="gallery-two-image img-responsive" alt=""/>
+															<img src="/images/gallery-two-img3.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 																<div class="b-animate b-from-left b-delay03 ">
-																	<a href="images/photo-gallery/image-3.jpg" rel="prettyPhoto[pp_gal]">
+																	<a href="/images/photo-gallery/image-3.jpg" rel="prettyPhoto[pp_gal]">
 																		<button class="zooming md-trigger">
-																				<img src="images/zoom.png" alt=""/>
+																				<img src="/images/zoom.png" alt=""/>
 																		</button>
 																	</a>
 																	<ul class="popup_links gallery-two-popup-links">
@@ -506,12 +558,12 @@
 									    <ul class="gallery-grid-two gallery-grid-box">
 										    <li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 4 -->
-													    <img src="images/gallery-two-img4.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img4.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																	<a href="images/photo-gallery/image-4.jpg" rel="prettyPhoto[pp_gal]">
+																	<a href="/images/photo-gallery/image-4.jpg" rel="prettyPhoto[pp_gal]">
 																		<button class="zooming md-trigger">
-																				<img src="images/zoom.png" alt=""/>
+																				<img src="/images/zoom.png" alt=""/>
 																		</button>
 																	</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -525,12 +577,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 5 -->
-													    <img src="images/gallery-two-img5.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img5.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																	<a href="images/photo-gallery/image-5.jpg" rel="prettyPhoto[pp_gal]">
+																	<a href="/images/photo-gallery/image-5.jpg" rel="prettyPhoto[pp_gal]">
 																		<button class="zooming md-trigger">
-																				<img src="images/zoom.png" alt=""/>
+																				<img src="/images/zoom.png" alt=""/>
 																		</button>
 																	</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -544,12 +596,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 6 -->
-													    <img src="images/gallery-two-img6.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img6.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																	<a href="images/photo-gallery/image-6.jpg" rel="prettyPhoto[pp_gal]">
+																	<a href="/images/photo-gallery/image-6.jpg" rel="prettyPhoto[pp_gal]">
 																		<button class="zooming md-trigger">
-																				<img src="images/zoom.png" alt=""/>
+																				<img src="/images/zoom.png" alt=""/>
 																		</button>
 																	</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -563,12 +615,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 7 -->
-													    <img src="images/gallery-two-img7.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img7.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-7.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-7.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -582,12 +634,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 8 -->
-													    <img src="images/gallery-two-img8.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img8.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-8.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-8.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -603,12 +655,12 @@
 											<!-- Only For Mobile -->
 											<li class="mobile-display-on">
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 9 -->
-													    <img src="images/gallery-two-img9.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img9.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-9.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-9.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -633,12 +685,12 @@
 									    <ul class="gallery-grid-three gallery-grid-box">
 										    <li class="mobile-display-off">
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 9 -->
-													    <img src="images/gallery-two-img9.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img9.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-9.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-9.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -652,12 +704,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 10 -->
-													    <img src="images/gallery-two-img10.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img10.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-															<a href="images/photo-gallery/image-10.jpg" rel="prettyPhoto[pp_gal]">
+															<a href="/images/photo-gallery/image-10.jpg" rel="prettyPhoto[pp_gal]">
 															    <button class="zooming md-trigger">
-																        <img src="images/zoom.png" alt=""/>
+																        <img src="/images/zoom.png" alt=""/>
 																</button>
 															</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -671,12 +723,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 11 -->
-													    <img src="images/gallery-two-img11.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img11.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-11.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-11.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -690,12 +742,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 12 -->
-													    <img src="images/gallery-two-img12.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img12.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-12.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-12.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -709,12 +761,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 13 -->
-													    <img src="images/gallery-two-img13.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img13.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-13.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-13.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -730,12 +782,12 @@
 											<!-- Only For Mobile -->
 											<li class="mobile-display-on">
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 14 -->
-													    <img src="images/gallery-two-img14.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img14.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-14.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-14.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -749,12 +801,12 @@
 										    </li>
 											<li class="mobile-display-on">
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 15 -->
-													    <img src="images/gallery-two-img15.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img15.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-15.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-15.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -779,12 +831,12 @@
 									    <ul class="gallery-grid-four gallery-grid-box">
 										    <li class="mobile-display-off">
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 14 -->
-													    <img src="images/gallery-two-img14.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img14.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-14.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-14.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -798,12 +850,12 @@
 										    </li>
 											<li class="mobile-display-off">
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 15 -->
-													    <img src="images/gallery-two-img15.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img15.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-15.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-15.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -817,12 +869,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 16 -->
-													    <img src="images/gallery-two-img16.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img16.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-16.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-16.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -836,12 +888,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 17 -->
-													    <img src="images/gallery-two-img17.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img17.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-17.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-17.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -855,12 +907,12 @@
 										    </li>
 											<li>
 												<div class="b-link-stripe b-animate-go thickbox"> <!-- Gallery image no : 18 -->
-													    <img src="images/gallery-two-img18.jpg" class="gallery-two-image img-responsive" alt=""/>
+													    <img src="/images/gallery-two-img18.jpg" class="gallery-two-image img-responsive" alt=""/>
 														<div class="b-wrapper">
 															<div class="b-animate b-from-left b-delay03 ">
-																<a href="images/photo-gallery/image-18.jpg" rel="prettyPhoto[pp_gal]">
+																<a href="/images/photo-gallery/image-18.jpg" rel="prettyPhoto[pp_gal]">
 																	<button class="zooming md-trigger">
-																			<img src="images/zoom.png" alt=""/>
+																			<img src="/images/zoom.png" alt=""/>
 																	</button>
 																</a>
 																<ul class="popup_links gallery-two-popup-links">
@@ -933,7 +985,7 @@
 					</div>
 			</section>
 			
-			@* <section id="map-section"> <!-- Map Section -->
+			<section id="map-section"> <!-- Map Section -->
 			
 			<!-- this is dummy heading for W3-Validation approval you can remove it if you want -->
 			<h2 class="w3-validation">For W3 Validation</h2>
@@ -942,11 +994,11 @@
 				<div class="container-fluid">
 					<div class="row">
 					    <div class="map-div wow fadeInDown">
-						    <a href="https://www.google.com/maps/place/Aquarium+of+the+Pacific/@33.7274471,-118.2521738,12z/data="><img src="images/map.jpg" alt="" /></a>
+						    <a href=""><img src="/images/map.jpg" alt="" /></a>
 						</div>
 					</div>
 				</div>
-			</section> *@
+			</section>
 			
 			<section id="footer-section"> <!-- Footer Section -->
 			
@@ -1000,3 +1052,5 @@
 			</script>
 			
 			<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+		</body>
+</html>		
