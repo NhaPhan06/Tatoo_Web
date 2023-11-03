@@ -15,11 +15,10 @@ namespace Presentaion.Pages.Profile
             _accountService = accountService;
         }
         [BindProperty]
-        public Customer customer { get; set; } = default!;
-        public Account account { get; set; };
+        public Customer customer { get; set; } = default;
         public IActionResult OnGet(Guid id)
         {
-            customer = _customerService.GetCusById(id);
+            customer = (Customer)_customerService.GetAll();
             return Page();
         }
     }
