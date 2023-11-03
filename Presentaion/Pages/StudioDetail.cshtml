@@ -40,15 +40,19 @@
                         </button>
                         <div class="modal-content hidden-modal">
                             <div class="modal-header">
-                                <h3>Meaning of Hello!</h3>
-                                <button class="close-modal">&times;</button>
-                            </div>
-                            <div class="modal-body">
-                                <p>
-                                    Hello is a greeting in the English language. It is used at
-                                    the start of a sentence as an introduction whether in person or
-                                    on the phone.
-                                </p>
+                                <form method="post">
+                                    <h3>Booking Date</h3>
+                                    <div class="inputBox" class="form-group">
+                                        <label asp-for="bookingDate" class="control-label"></label>
+                                        <input asp-for="bookingDate" type="date" class="form-control"/>
+                                        <span asp-validation-for="bookingDate" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Create" class="btn btn-primary">
+                                    </div>
+                                    <button class="close-modal">&times;</button>
+                                </form>
+
                             </div>
                         </div>
                         <div class="blur-bg hidden-blur"></div>
