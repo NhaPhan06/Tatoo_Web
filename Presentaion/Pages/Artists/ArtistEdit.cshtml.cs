@@ -27,17 +27,27 @@ namespace Presentaion.Pages.Artists
 
         public IActionResult OnGet(Guid id)
         {
+            try
+            {
+                Artist = _artistService.GetArtistById(id);
+                return Page();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                return Page();
 
-            Artist = _artistService.GetArtistById(id);
-            return Page();
+            }
+
         }
 
-        public IActionResult OnPost()
+        public  IActionResult OnPost()
         {
 
             try
             {
-                _artistService.UdpateArtist(Artist.Id, Artist);
+                Artist= _artistService.UdpateArtist(Artist.Id, Artist);
+                return Redirect("/Artists/ArtistIndex");
             }
             catch (Exception ex)
             {

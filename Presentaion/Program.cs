@@ -43,5 +43,13 @@ app.UseSession();
 app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages();
-
+app.UseEndpoints(endpoints =>
+{
+	endpoints.MapRazorPages();
+	endpoints.MapGet("/", c =>
+	{
+		c.Response.Redirect("/HomePage");
+		return Task.CompletedTask;
+	});
+});
 app.Run();

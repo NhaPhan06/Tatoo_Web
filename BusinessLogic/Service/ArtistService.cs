@@ -32,7 +32,8 @@ public class ArtistService : IArtistService
         {
             throw new Exception("Nothing change!");
         }
-
+        art.Name = artist.Name;
+        art.Experience = artist.Experience;
         var update = _unitOfWork.Artist.UpdateArtist(art);
         _unitOfWork.Studio.SaveChanges();
         return update;

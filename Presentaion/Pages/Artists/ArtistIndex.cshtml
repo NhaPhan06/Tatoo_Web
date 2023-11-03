@@ -2,6 +2,7 @@
 @model Presentaion.Pages.Artists.ArtistIndexModel
 @{
     ViewData["Title"] = "ArtistIndex";
+    Layout = "_LayoutLogin";
 }
 <h1>Artist List</h1>
 <form method="get">
@@ -40,14 +41,14 @@
                     @Html.DisplayFor(modelItem => item.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Studio)
+                    @Html.DisplayFor(modelItem => item.Studio.Name)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Experience)
                 </td>               
                 <td>
-                    <a asp-page="./ArtistEdit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./ArtistEdit" asp-route-id="@item.Id">Edit</a> 
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> 
                     <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
                 </td>
             </tr>
