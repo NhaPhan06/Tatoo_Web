@@ -26,6 +26,10 @@
 
                 <form method="post" class="file-upload">
                     <div class="row mb-5 gx-5">
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+                        }
                         <div class="col-xxl-8 mb-5 mb-xxl-0">
                             <div class="bg-secondary-soft px-4 py-5 rounded">
                                 <div class="row g-3">
@@ -73,7 +77,7 @@
                         <div class="gap-3 d-md-flex justify-content-md-end text-center">
                         @*<button type="button" class="btn btn-danger btn-lg">Delete profile</button>*@
                         <button type="button" class="btn btn-primary btn-lg">Update profile</button>
-                        </div>
+                    </div>
 
                         <div class="card">
                             <div class="card-body">
