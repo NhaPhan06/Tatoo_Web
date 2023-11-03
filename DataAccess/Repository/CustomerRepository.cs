@@ -11,6 +11,7 @@ public class CustomerRepository: GenericRepository<Customer>, ICustomerRepositor
     {
         _context = context;
     }
+    public IEnumerable<Customer> GetAll() => _context.Customers.ToList();
     public Customer GetCusById(Guid id)
     {
         return _context.Set<Customer>().FirstOrDefault(c => c.Id == id);

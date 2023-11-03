@@ -12,6 +12,7 @@ public class CustomerService : ICustomerService
         _unitOfWork = unitOfWork;
     }
 
+    public IEnumerable<Customer> GetAll() => _unitOfWork.Customer.GetAll().ToList();
     public Customer GetCusById(Guid id)
     {
         return _unitOfWork.Customer.GetCusById(id);

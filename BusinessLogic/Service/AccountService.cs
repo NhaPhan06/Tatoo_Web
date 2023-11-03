@@ -20,7 +20,9 @@ public class AccountService : IAccountService
         _mapper = mapper;
     }
 
-    
+    IEnumerable<Account> GetAll() => _unitOfWork.Account.GetAll().ToList();
+
+
     public async Task CreateStudioAccount(CreateStudio account)
     {
         var company = _mapper.Map<Studio>(account);
