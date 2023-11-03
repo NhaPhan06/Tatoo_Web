@@ -12,12 +12,11 @@ public class CustomerRepository: GenericRepository<Customer>, ICustomerRepositor
     {
         _context = context;
     }
-    public IEnumerable<Customer> GetAll() => _context.Customers.Include(c => c.Account).ToList();
     public Customer GetCusById(Guid id)
     {
         return _context.Set<Customer>().FirstOrDefault(c => c.Id == id);
     }
-    public bool IsChange(Customer cusold, Customer cusnew )
+    /*public bool IsChange(Customer cusold, Customer cusnew )
     {
         var CusOld = _context.Set<Customer>().Entry(cusold);
         var CusNew = _context.Set<Customer>().Entry(cusnew);
@@ -26,7 +25,7 @@ public class CustomerRepository: GenericRepository<Customer>, ICustomerRepositor
             return false;
         }
         return true;
-    }
+    }*/
 
    /* public bool IsEmailExist(string email)
     {

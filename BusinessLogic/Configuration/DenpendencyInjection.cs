@@ -21,7 +21,7 @@ public static class DenpendencyInjection
         services.AddDbContext<TatooWebContext>(options => { options.UseSqlServer(connString); });
         
         // SIGN UP UNIT OF WORK FOR REPO AND GENERIC
-        services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        /*services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));*/
         services.AddTransient<IUnitOfWork, UnitOfWorkRepository>();
         
         // SIGN UP REPO
