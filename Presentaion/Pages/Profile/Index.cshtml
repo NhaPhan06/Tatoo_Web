@@ -29,51 +29,66 @@
                         
                         <div class="col-xxl-8 mb-5 mb-xxl-0">
                             <div class="bg-secondary-soft px-4 py-5 rounded">
-                                <div class="row g-3">
-                                    <h4 class="mb-4 mt-0">Contact detail</h4>
-                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                                    <input type="hidden" asp-for="Customer.Id"/>
+                                <div class="row g-3"></div>
 
                                     <div class="col-md-6">
-                                        <label for="FirstName" class="form-label">First Name *</label>
-                                        <input asp-for="Customer.FirstName" type="text" class="form-control"  aria-label="First name" />
-                                        <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.cus.FirstName)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.cus.FirstName)
+                                    </dd>
+                                </div>
+
+                                    <div class="col-md-6">
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.cus.LastName)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.cus.LastName)
+                                    </dd>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="LastName" class="form-label">Last Name *</label>
-                                        <input asp-for="Customer.LastName" type="text" class="form-control" aria-label="Last name" />
-                                        <span asp-validation-for="Customer.LastName" class="text-danger"></span>
+                                        <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.cus.Account)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.cus.Account.Email)
+                                    </dd>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="Phone" class="form-label">Phone Number *</label>
-                                        <input asp-for="Account.Phone" type="text" class="form-control" aria-label="Phone Number" />
-                                        <span asp-validation-for="Account.Phone" class="text-danger"></span>
+                                    <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.cus.Account)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.cus.Account.DateOfBirth)
+                                    </dd>
+
+                                    <div class="col-md-6">
+                                            <dt class="col-sm-2">
+                                        @Html.DisplayNameFor(model => model.cus.Account)
+                                    </dt>
+                                    <dd class="col-sm-10">
+                                        @Html.DisplayFor(model => model.cus.Account.Phone)
+                                    </dd>
                                     </div>
 
                                     <div class="col-md-6">
-                                        <label for="DateOfBirth" class="form-label">Birthday</label>
-                                        <input asp-for="Account.DateOfBirth" type="text" class="form-control" aria-label="Birthday"/>
-                                        <span  asp-validation-for="Account.DateOfBirth" class="text-danger"></span>
-
-                                    <div class="col-md-6">
-                                            <label for="Email" class="form-label">Email</label>
-                                            <input asp-for="Account.Email" type="text" class="form-control" aria-label="Email" />
-                                            <span asp-validation-for="Account.Email" class="text-danger"></span>
-                                    </div>
-
-                                    <div class="col-md-6">
-                                            <label for="Address" class="form-label">Address</label>
-                                            <input asp-for="Customer.Address" type="text" class="form-control" aria-label="Address" />
-                                            <span asp-validation-for="Customer.Address" class="text-danger"></span>
+                                        <dt class="col-sm-2">
+                                            @Html.DisplayNameFor(model => model.cus.Address)
+                                        </dt>
+                                        <dd class="col-sm-10">
+                                            @Html.DisplayFor(model => model.cus.Address)
+                                        </dd>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="gap-3 d-md-flex justify-content-md-end text-center">
                         @*<button type="button" class="btn btn-danger btn-lg">Delete profile</button>*@
-                        <button type="button" class="btn btn-primary btn-lg">Update profile</button>
+                        <a asp-page="./Edit" asp-route-id="@Model.cus?.Id" type="button" class="btn btn-primary btn-lg">Update profile</a>
                     </div>
 
                         <div class="card">

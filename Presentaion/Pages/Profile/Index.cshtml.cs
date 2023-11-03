@@ -8,17 +8,22 @@ namespace Presentaion.Pages.Profile
     public class IndexModel : PageModel
     {
         private readonly ICustomerService _customerService;
-        private readonly IAccountService _accountService;
-        public IndexModel(ICustomerService customerService, IAccountService accountService)
+        public IndexModel( ICustomerService customerService)
         {
             _customerService = customerService;
-            _accountService = accountService;
         }
         [BindProperty]
-        public Customer customer { get; set; } = default;
+        public Customer cus { get; set; } = default;
         public IActionResult OnGet(Guid id)
         {
-            customer = (Customer)_customerService.GetAll();
+            var customer = _customerService.GetCusById(id);
+            if (customer == null) {
+                return NotFound();
+            }
+            else
+            {
+                cus = customer;
+            }
             return Page();
         }
     }
