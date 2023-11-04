@@ -96,11 +96,7 @@ public class StudioService : IStudioService
             }
         }
         stu.Address = studio.Address;
-
-
-
-
-
+        
 
         var update = _unitOfWork.Studio.Update(stu);
         _unitOfWork.Studio.SaveChanges();
