@@ -1,6 +1,7 @@
 ﻿using DataAccess.DataAccess;
 using DataAccess.IRepository;
 using DataAccess.Repository.Generic;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataAccess.Repository;
 
@@ -11,6 +12,8 @@ public class SchedulingRepository: GenericRepository<Scheduling>, ISchedulingRep
     {        
         _context = context;
     }
+
+	public IEnumerable<Scheduling> GetAll() => _context.Schedulings.Include(c => c.Booking).ToList();
 
     public Scheduling Create(Scheduling scheduling)
     {

@@ -22,6 +22,10 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
+builder.Services.AddRazorPages().AddRazorPagesOptions(options =>
+{
+    options.Conventions.AddPageRoute("/Index", "");
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,5 +43,13 @@ app.UseSession();
 app.UseRouting();
 app.UseAuthorization();
 app.MapRazorPages();
-
+app.UseEndpoints(endpoints =>
+{
+	endpoints.MapRazorPages();
+	endpoints.MapGet("/", c =>
+	{
+		c.Response.Redirect("/HomePage");
+		return Task.CompletedTask;
+	});
+});
 app.Run();

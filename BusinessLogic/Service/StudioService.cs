@@ -3,6 +3,7 @@ using DataAccess.DataAccess;
 using DataAccess.IRepository;
 using DataAccess.IRepository.UnitOfWork;
 using DataAccess.Repository;
+using DataAccessObject.Utils;
 
 namespace BusinessLogic.Service;
 
@@ -41,9 +42,10 @@ public class StudioService : IStudioService
         return _unitOfWork.Studio.GetById(id);
     }
 
-    public List<Studio> Search(string name)
+    public Pagination<Studio> Search(string name, int pageIndex, int pageSize)
     {
-        return _unitOfWork.Studio.Search(name);
+        var stu = _unitOfWork.Studio.Search(name);
+        return _unitOfWork.Studio.ToPagination(stu, pageIndex, pageSize);
     }
 
     public Studio Update(Guid id, Studio studio)

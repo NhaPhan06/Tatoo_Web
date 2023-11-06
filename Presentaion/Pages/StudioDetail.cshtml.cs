@@ -35,6 +35,6 @@ public class StudioDetail : PageModel
         }
         Guid id = Guid.Parse(userName);
         _bookingService.CreateBooking(id, bookingDate, studio.Id);
-        return Page();
+        return RedirectToPage("/Studios/Index");
     }
 }

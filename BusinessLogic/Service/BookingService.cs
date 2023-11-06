@@ -32,4 +32,8 @@ public class BookingService : IBookingService
 
         return true;
     }
+    public IEnumerable<Booking> GetAll() => _unitOfWork.Booking.GetAll().ToList();
 }
+
+
+    

@@ -5,6 +5,7 @@ namespace DataAccess.IRepository;
 
 public interface ISchedulingRepository : IGenericRepository<Scheduling>
 {
+	IEnumerable<Scheduling> GetAll();
     Scheduling GetById(Guid id);
     Scheduling Update(Scheduling scheduling);
     Scheduling Delete(Scheduling scheduling);
