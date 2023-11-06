@@ -72,3 +72,13 @@
 }
     </tbody>
 </table>
+<div>
+    <ul class="pagination">
+        @for (var i = 1; i <= Model.TotalPages; i++)
+        {
+            <li class="page-item @(i == Model.PageIndex ? "active" : "")">
+                <a asp-page="./index" asp-route-PageIndex="@i" asp-route-id="@Model.NewId" class="page-link">@i</a>
+            </li>
+        }
+    </ul>
+</div>

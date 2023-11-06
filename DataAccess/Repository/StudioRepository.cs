@@ -1,6 +1,9 @@
 ﻿using DataAccess.DataAccess;
 using DataAccess.IRepository;
 using DataAccess.Repository.Generic;
+using DataAccessObject.Utils;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace DataAccess.Repository;
 
@@ -87,6 +90,7 @@ public class StudioRepository: GenericRepository<Studio>, IStudioRepository
 
     public List<Studio> Search(string name)
     {
+        
         if (name == null)
         {
             var studios = _context.Set<Studio>().ToList();
@@ -106,4 +110,21 @@ public class StudioRepository: GenericRepository<Studio>, IStudioRepository
         _context.Set<Studio>().Update(studio);
         return studio;
     }
+
+    public Pagination<Studio> ToPagination(IEnumerable<Studio> list, int pageIndex = 0, int pageSize = 10)
+    {
+        
+
+        var result = new Pagination<Studio>
+        {
+            PageIndex = pageIndex,
+            PageSize = pageSize,
+            Items = list.Skip(pageIndex * pageSize).Take(pageSize).ToList(),
+            TotalItemsCount = list.Count()
+        };
+
+        return result;
+    }
+
+    
 }
