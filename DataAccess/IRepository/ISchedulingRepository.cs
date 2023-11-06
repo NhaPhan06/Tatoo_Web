@@ -11,4 +11,6 @@ public interface ISchedulingRepository : IGenericRepository<Scheduling>
     Scheduling Delete(Scheduling scheduling);
     Scheduling Create(Scheduling scheduling);    
     void SaveChanges();
+    Customer GetCustomerByID(Guid id);
+    Account GetAccountByID(Guid id);
 }

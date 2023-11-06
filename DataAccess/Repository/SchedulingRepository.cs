@@ -44,4 +44,12 @@ public class SchedulingRepository: GenericRepository<Scheduling>, ISchedulingRep
         _context.Set<Scheduling>().Update(scheduling);
         return scheduling;
     }
+    public Customer GetCustomerByID(Guid id)
+    {
+        return _context.Set<Customer>().FirstOrDefault(c => c.Id == id);
+    }
+    public Account GetAccountByID(Guid id)
+    {
+        return _context.Set<Account>().FirstOrDefault(a => a.Id == id);
+    }
 }
