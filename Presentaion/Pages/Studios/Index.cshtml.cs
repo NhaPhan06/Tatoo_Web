@@ -18,7 +18,10 @@ namespace Presentaion.Pages.Studios
         [BindProperty(SupportsGet = true)]
         public string SearchQuery { get; set; }
         private readonly IStudioService _studioService;
-
+        [BindProperty(SupportsGet = true)] public int PageIndex { get; set; } = 1;
+        public int TotalPages { get; set; }
+        public int PageSize { get; set; } = 10;
+        [BindProperty] public string? NewId { get; set; }
         public IndexModel(IStudioService studioService)
         {
             _studioService = studioService;
@@ -29,7 +32,9 @@ namespace Presentaion.Pages.Studios
         public IActionResult OnGet()
         {
 
-            Studio = _studioService.Search(SearchQuery);
+            var stu = _studioService.Search(SearchQuery, PageIndex - 1, PageSize);
+            TotalPages = stu.TotalPagesCount;
+            Studio = stu.Items.ToList();
             return Page();
         }
 
