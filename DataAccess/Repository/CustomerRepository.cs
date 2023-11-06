@@ -9,4 +9,9 @@ public class CustomerRepository: GenericRepository<Customer>, ICustomerRepositor
     public CustomerRepository(TatooWebContext context) : base(context)
     {
     }
+
+    public Customer getByAccount(Guid guid)
+    {
+        return _context.Customers.FirstOrDefault(c => c.AccountId == guid);
+    }
 }

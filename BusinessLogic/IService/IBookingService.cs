@@ -4,5 +4,5 @@ namespace BusinessLogic.IService;
 
 public interface IBookingService
 {
-    Task<bool> CreateBooking(Guid id, DateTime? date, Guid studioID);
+    Task<bool> CreateBooking(Guid id, DateTime date, Guid studioID);
 }
