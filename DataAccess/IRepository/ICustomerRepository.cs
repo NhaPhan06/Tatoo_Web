@@ -5,9 +5,9 @@ namespace DataAccess.IRepository;
 
 public interface ICustomerRepository : IGenericRepository<Customer>
 {
-    Customer GetCusById(Guid id);
+    IEnumerable<Customer> GetAll();
     /*Customer Update(Customer customer);*/
-    void SaveChanges();
+    /*void SaveChanges();*/
     /*Boolean IsEmailExist(string email);
     Boolean IsPhoneExist(string phone);
     Boolean IsChange(Customer cusold, Customer cusnew);*/

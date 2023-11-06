@@ -12,10 +12,12 @@ public class CustomerService : ICustomerService
         _unitOfWork = unitOfWork;
     }
 
-    public Customer GetCusById(Guid id)
+    public IEnumerable<Customer> GetAll() => _unitOfWork.Customer.GetAll().ToList();
+
+    /*public Customer GetCusById(Guid id)
     {
         return _unitOfWork.Customer.GetCusById(id);
-    }
+    }*/
 
     /*public Customer Update(Guid id, Customer customer, Account account)
     {

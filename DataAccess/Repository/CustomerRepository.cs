@@ -12,10 +12,12 @@ public class CustomerRepository: GenericRepository<Customer>, ICustomerRepositor
     {
         _context = context;
     }
-    public Customer GetCusById(Guid id)
-    {
-        return _context.Set<Customer>().FirstOrDefault(c => c.Id == id);
-    }
+    public IEnumerable<Customer> GetAll() => _context.Customers.Include(c => c.Account).ToList();
+
+    /* public Customer GetCusById(Guid id)
+     {
+         return _context.Set<Customer>().FirstOrDefault(c => c.Id == id);
+     }*/
     /*public bool IsChange(Customer cusold, Customer cusnew )
     {
         var CusOld = _context.Set<Customer>().Entry(cusold);
@@ -27,31 +29,31 @@ public class CustomerRepository: GenericRepository<Customer>, ICustomerRepositor
         return true;
     }*/
 
-   /* public bool IsEmailExist(string email)
-    {
-        var check = _context.Set<Account>().FirstOrDefault(c => c.Email == email);
-        if (check == null)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+    /* public bool IsEmailExist(string email)
+     {
+         var check = _context.Set<Account>().FirstOrDefault(c => c.Email == email);
+         if (check == null)
+         {
+             return false;
+         }
+         else
+         {
+             return true;
+         }
+     }
 
-    public bool IsPhoneExist(string phone)
-    {
-        var check = _context.Set<Account>().FirstOrDefault(c => c.Phone == phone);
-        if (check == null)
-        {
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }*/
+     public bool IsPhoneExist(string phone)
+     {
+         var check = _context.Set<Account>().FirstOrDefault(c => c.Phone == phone);
+         if (check == null)
+         {
+             return false;
+         }
+         else
+         {
+             return true;
+         }
+     }*/
 
     public void SaveChanges()
     { 

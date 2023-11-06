@@ -12,6 +12,6 @@ public class BookingRepository: GenericRepository<Booking>, IBookingRepository
     {
         _context = context;
     }
-    public IEnumerable<Booking> GetAll() => _context.Bookings.ToList();
+    public IEnumerable<Booking> GetAll() => _context.Bookings.Include(c => c.Schedulings).ToList();
     
 }
