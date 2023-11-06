@@ -5,5 +5,6 @@ namespace DataAccess.IRepository;
 
 public interface ISchedulingRepository : IGenericRepository<Scheduling>
 {
-    
+    IEnumerable<Scheduling> GetAll();
+
 }

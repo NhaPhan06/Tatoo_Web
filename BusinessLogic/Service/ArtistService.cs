@@ -13,6 +13,11 @@ public class ArtistService : IArtistService
         _unitOfWork = unitOfWork;
     }
 
+    public Artist CreateArtist(Artist artist)
+    {
+        return _unitOfWork.Artist.CreateArtist(artist);
+    }
+
     public Artist GetArtistById(Guid id)
     {
         return _unitOfWork.Artist.GetById(id);

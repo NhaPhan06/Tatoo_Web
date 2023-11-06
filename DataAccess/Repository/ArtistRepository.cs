@@ -14,6 +14,12 @@ public class ArtistRepository: GenericRepository<Artist>, IArtistRepository
         _context = context;
     }
 
+    public Artist CreateArtist(Artist artist)
+    {
+        _context.Set<Artist>().Add(artist);
+        return artist;
+    }
+
     public List<Artist> SearchArtist(string name)
     {
         if (name == null)

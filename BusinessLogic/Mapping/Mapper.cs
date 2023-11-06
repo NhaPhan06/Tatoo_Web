@@ -15,6 +15,7 @@ public class Mapper : Profile
             .ForMember(c => c.Address, act => act.MapFrom(src => src.Address))
             .ForMember(c => c.StudioPhone, act => act.MapFrom(src => src.StudioPhone))
             .ForMember(c => c.StudioEmail, act => act.MapFrom(src => src.StudioEmail))
+            .ForMember(c => c.Status, act => act.MapFrom(src => StudioStatus.ACTIVE.ToString()))
             .ForMember(c => c.Account, act => act.MapFrom(src => new Account
             {
                 Id = Guid.NewGuid(),
@@ -37,6 +38,7 @@ public class Mapper : Profile
                 Id = Guid.NewGuid(),
                 UserName = src.UserName,
                 Password = src.Password,
+                Email = src.Email,
                 CreateDate = DateTime.Now,
                 Phone = src.Phone,
                 Role = Role.CUSTOMER.ToString(),
