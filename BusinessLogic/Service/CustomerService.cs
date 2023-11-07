@@ -14,57 +14,38 @@ public class CustomerService : ICustomerService
 
     public IEnumerable<Customer> GetAll() => _unitOfWork.Customer.GetAll().ToList();
 
-    /*public Customer GetCusById(Guid id)
+    public Customer GetCustomerById(Guid id)
     {
-        return _unitOfWork.Customer.GetCusById(id);
-    }*/
+        return _unitOfWork.Customer.GetById(id);
+    }
 
-    /*public Customer Update(Guid id, Customer customer, Account account)
+
+    public Customer UpdateCustomer(Guid id, Customer customer)
     {
-        var cus = _unitOfWork.Customer.GetCusById(id);
-        var acc = _unitOfWork.Account.GetById(id);
-
-        if (acc.Email == account.Email &&
-            acc.Phone == account.Phone &&
-            cus.FirstName == customer.FirstName &&
-            cus.LastName == customer.LastName &&
-            cus.Address == customer.Address)
+        var cus = _unitOfWork.Customer.GetById(id);
+        if (cus.Account.UserName == customer.Account.UserName&&
+            cus.Account.Password == customer.Account.Password&&
+            cus.FirstName == customer.FirstName&&
+            cus.LastName == customer.LastName&&
+            cus.Address == customer.Address&&
+            cus.Account.Email == customer.Account.Email&&
+            cus.Account.Phone == customer.Account.Phone&&
+            cus.Account.DateOfBirth == customer.Account.DateOfBirth)
         {
-            throw new Exception("Nothing change!");
+            throw new Exception("Nothing change");
         }
-
-
-        *//*else
-        {
-            stu.StudioEmail = studio.StudioEmail;
-            stu.StudioPhone = studio.StudioPhone;
-            stu.Name = studio.Name;
-            stu.Address = studio.Address;
-        }*//*
-
-
-        if (acc.Email != account.Email)
-        {
-            acc.Email = account.Email;
-            var checkEmail = _unitOfWork.Customer.IsEmailExist(acc.Email);
-            if (checkEmail == true)
-            {
-                throw new Exception("Email used!");
-            }
-        }
-        if (acc.Phone != account.Phone)
-        {
-            acc.Phone = account.Phone;
-            var checkPhone = _unitOfWork.Customer.IsPhoneExist(acc.Phone);
-            if (checkPhone == true)
-            {
-                throw new Exception("Number phone used!");
-            }
-        }
+        cus.Account.UserName = customer.Account.UserName;
+        cus.Account.Password = customer.Account.Password;
+        cus.FirstName = customer.FirstName;
+        cus.LastName = customer.LastName;
         cus.Address = customer.Address;
-        var update = _unitOfWork.Customer.Update(cus);
+        cus.Account.Email = customer.Account.Email;
+        cus.Account.Phone = customer.Account.Phone;
+        cus.Account.DateOfBirth = customer.Account.DateOfBirth;
+        var update = _unitOfWork.Customer.UpdateCustomer(cus);
         _unitOfWork.Customer.SaveChanges();
-        return update;*/
+        return update;
+    }
 
 
 }

@@ -76,12 +76,12 @@
                         </div>
                         <div class="gap-3 d-md-flex justify-content-md-end text-center">
                             @*<button type="button" class="btn btn-danger btn-lg">Delete profile</button>*@
-                            <button type="button" class="btn btn-primary btn-lg">Update profile</button>
+                            <a asp-page="./Profile/Edit" asp-route-id="Customer.Id" type="button" class="btn btn-primary btn-lg">Update profile</a>
                         </div>
 
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-uppercase mb-0">Booking History</h5>
+                                <h5 class="card-title text-uppercase mb-0">Schedule History</h5>
                             </div>
                             <div class="table-responsive">
                                 <table class="table no-wrap user-table mb-0">
@@ -95,7 +95,7 @@
                                         </tr>
                                     </thead>
                                     
-                                   @* <tbody>
+                                    <tbody>
                                         @foreach (var item in Model.Scheduling)
                                         {
                                         <tr>
@@ -116,7 +116,7 @@
                                             </td>
                                         </tr>
                                         }
-                                    </tbody>*@
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
