@@ -8,5 +8,6 @@ public interface IArtistRepository : IGenericRepository<Artist>
     List<Artist> SearchArtist(string name);  
     Artist UpdateArtist(Artist artist);
     Artist CreateArtist(Artist artist);
+    Artist GetArtistById(Guid id);
     
 }

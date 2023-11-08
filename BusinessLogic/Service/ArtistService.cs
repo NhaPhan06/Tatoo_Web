@@ -1,4 +1,6 @@
-﻿using BusinessLogic.IService;
+﻿using AutoMapper;
+using BusinessLogic.DTOS.Artist;
+using BusinessLogic.IService;
 using DataAccess.DataAccess;
 using DataAccess.IRepository.UnitOfWork;
 
@@ -6,21 +8,26 @@ namespace BusinessLogic.Service;
 
 public class ArtistService : IArtistService
 {
+    private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
-    public ArtistService(IUnitOfWork unitOfWork)
+    public ArtistService(IMapper mapper, IUnitOfWork unitOfWork)
     {
+        _mapper = mapper;
         _unitOfWork = unitOfWork;
     }
 
-    public Artist CreateArtist(Artist artist)
+    public Artist CreateArtist(CreateArtist artist)
     {
-        return _unitOfWork.Artist.CreateArtist(artist);
+        var ac = _mapper.Map<Artist>(artist);
+        _unitOfWork.Artist.Add(ac);
+        _unitOfWork.Save();
+        return ac;
     }
 
     public Artist GetArtistById(Guid id)
     {
-        return _unitOfWork.Artist.GetById(id);
+        return _unitOfWork.Artist.GetArtistById(id);
     }
 
     public List<Artist> SearchArtist(string name)
