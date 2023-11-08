@@ -41,8 +41,12 @@ public static class DenpendencyInjection
 
         // SIGN UP SERVICE
         services.AddTransient<IAccountService, AccountService>();
+        services.AddTransient<IArtistService, ArtistService>();
+        services.AddTransient<IArtworkService, ArtworkService>();
         services.AddTransient<IStudioService, StudioService>();
-        services.AddTransient<IBookingService, BookingService>();
+        services.AddTransient<ICustomerService, CustomerService>();
+        services.AddTransient<ISchedulingService,SchedulingService>();
+        services.AddTransient<IBookingService,BookingService>();
         
         //AUTOMAPPER
         services.AddAutoMapper(typeof(Mapper).Assembly);

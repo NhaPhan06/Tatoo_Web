@@ -5,6 +5,7 @@ namespace BusinessLogic.IService;
 
 public interface IAccountService
 {
+    IEnumerable<Account> GetAll();
     Task CreateStudioAccount(CreateStudio account);
     Task CreateCustomerAccount(CreateCustomer account);
 

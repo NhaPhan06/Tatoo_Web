@@ -30,5 +30,8 @@ public class BookingService : IBookingService
         _unitOfWork.Save();
         return true;
     }
-    
+    public IEnumerable<Booking> GetAll() => _unitOfWork.Booking.GetAll().ToList();
 }
+
+
+    

@@ -1,11 +1,63 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Title -->
+    <title>InkTatto</title>
+
+    <!-- Bootstrap & Font-Awesome CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css" type='text/css'>
+    <link rel="stylesheet" href="/css/font-awesome.min.css" type='text/css'>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css" type='text/css'>
+    <link rel="stylesheet" href="/css/prettyPhoto.css" type='text/css'>
+    <link rel="stylesheet" href="/css/responsive.css" type='text/css'>
+
+    <!-- Animation CSS -->
+    <link href="/css/animate.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Google Webfont -->
+    <link href='http://fonts.googleapis.com/css?family=Noticia+Text:400,700' rel="stylesheet" type='text/css'>
+
+    <!-- js files & script -->
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/js/hover_pack.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+    <script type="text/javascript" src="/js/move-top.js"></script>
+    <script type="text/javascript" src="/js/easing.js"></script>
+    <script type="text/javascript" src="/js/modernizr.js"></script>
+    <script type="text/javascript" src="/js/retina.js"></script>
+    <script type="text/javascript" src="/js/jquery.prettyPhoto.js"></script>
+    <script type="text/javascript" src="/js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <style>
+        .header {
+            background: url(../images/banner.jpg)no-repeat center top;
+            background-size: 100% 100%;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            min-height: 500px;
+        }
+    </style>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Presentaion</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Presentaion.styles.css" asp-append-version="true" />
 </head>
 <body>
