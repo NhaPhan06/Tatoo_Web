@@ -34,15 +34,20 @@ namespace Presentaion.Pages.SchedulePage
             }            
             if (m_bookingService.GetAll() != null)
             {
+                List<Customer> listGetCus = new List<Customer>();
+                List<Account> listGetAcc = new List<Account>();
+
                 Bookings = m_bookingService.GetAll().ToList();
                 if (Bookings.Count > 0) { 
                     foreach (var booking in Bookings)
                     {
-                        Customer customer = m_schedulingService.GetCustomerByID(((Guid)booking.CustomerId));
-                        Customers.Add(customer);
+                        Customer customer = m_schedulingService.GetCustomerByID(((Guid)booking.CustomerId));                        
+                        listGetCus.Add(customer);
                         Account account = m_schedulingService.GetAccountByID((Guid)customer.AccountId);
-                        Accounts.Add(account);
+                        listGetAcc.Add(account);
                     }
+                    Customers = listGetCus.ToList();
+                    Accounts = listGetAcc.ToList();
                 }
             }
             if (m_schedulingService.GetAll() != null)
@@ -51,9 +56,70 @@ namespace Presentaion.Pages.SchedulePage
             }
             return Page();
         }
-        public ActionResult OnPost()
+        public IActionResult OnGetBookingCancel(Guid id)
         {
-               
+            Booking curBooking = new Booking();
+            //curBooking = m_bookingService.GetById(id);
+            //curBooking.Status = "CANCEL";
+            //m_bookingService.Update(curBooking);
+            //m_bookingService.SaveChanges();
+
+            if (m_bookingService.GetAll() != null)
+            {
+                List<Customer> listGetCus = new List<Customer>();
+                List<Account> listGetAcc = new List<Account>();
+
+                Bookings = m_bookingService.GetAll().ToList();
+                if (Bookings.Count > 0)
+                {
+                    foreach (var booking in Bookings)
+                    {
+                        Customer customer = m_schedulingService.GetCustomerByID(((Guid)booking.CustomerId));
+                        listGetCus.Add(customer);
+                        Account account = m_schedulingService.GetAccountByID((Guid)customer.AccountId);
+                        listGetAcc.Add(account);
+                    }
+                    Customers = listGetCus.ToList();
+                    Accounts = listGetAcc.ToList();
+                }
+            }
+            if (m_schedulingService.GetAll() != null)
+            {
+                Schedulings = m_schedulingService.GetAll().ToList();
+            }
+            return Page();
+        }
+        public IActionResult OnGetCancel(Guid id)
+        {
+            Scheduling scheduling = new Scheduling();
+            scheduling = m_schedulingService.GetById(id);
+            scheduling.Status = "CANCEL";
+            m_schedulingService.Update(scheduling);
+            m_schedulingService.SaveChanges();
+
+            if (m_bookingService.GetAll() != null)
+            {
+                List<Customer> listGetCus = new List<Customer>();
+                List<Account> listGetAcc = new List<Account>();
+
+                Bookings = m_bookingService.GetAll().ToList();
+                if (Bookings.Count > 0)
+                {
+                    foreach (var booking in Bookings)
+                    {
+                        Customer customer = m_schedulingService.GetCustomerByID(((Guid)booking.CustomerId));
+                        listGetCus.Add(customer);
+                        Account account = m_schedulingService.GetAccountByID((Guid)customer.AccountId);
+                        listGetAcc.Add(account);
+                    }
+                    Customers = listGetCus.ToList();
+                    Accounts = listGetAcc.ToList();
+                }
+            }
+            if (m_schedulingService.GetAll() != null)
+            {
+                Schedulings = m_schedulingService.GetAll().ToList();
+            }
             return Page();
         }
     }

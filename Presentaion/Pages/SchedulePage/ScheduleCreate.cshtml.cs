@@ -3,6 +3,7 @@ using DataAccess.DataAccess;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace Presentaion.Pages.SchedulePage
 {
@@ -14,36 +15,39 @@ namespace Presentaion.Pages.SchedulePage
         {
             _schedulingService = schedulingService;
         }
+        [BindProperty]
         public Scheduling schedule { get; set; } = default!;
+        [BindProperty]
+        public Guid bookingID { get; set; }
         public IActionResult OnGet(Guid id)
         {
-            string inputString = "";
-            bool isValid = Guid.TryParse(inputString, out id);
-            if (isValid == false)
+            if (id == Guid.Empty)
             {
-                //return RedirectToPage("./ScheduleView");
-                return Page();
+                return RedirectToPage("./ScheduleView");
             } else
             {
-                schedule.BookingId = id;
+                bookingID = id;
                 return Page();
             }
         }
-        public IActionResult OnPost()
+        public IActionResult OnPost(Guid bookingid)
         {
             if (schedule == null)
             {
                 return Page();
             } else
             {
+                Guid id = Guid.NewGuid();
+                schedule.Id = id;
+                schedule.BookingId = bookingid;
                 string startTime = Request.Form["StartTime"].ToString();
-                schedule.StartTime = TimeSpan.Parse(startTime);
+                schedule.StartTime = TimeSpan.ParseExact(startTime, @"hh\:mm", CultureInfo.InvariantCulture);
                 string endTime = Request.Form["EndTime"].ToString();
-                schedule.StartTime = TimeSpan.Parse(endTime);
+                schedule.EndTime = TimeSpan.ParseExact(endTime, @"hh\:mm", CultureInfo.InvariantCulture);
+                schedule.Status = "ONPROCESS";
                 _schedulingService.Create(schedule);
                 _schedulingService.SaveChanges();
             }
-
             return RedirectToPage("./ScheduleView");
         }
     }
