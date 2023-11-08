@@ -64,4 +64,8 @@ public class CustomerRepository: GenericRepository<Customer>, ICustomerRepositor
         _context.Set<Customer>().Update(customer);
         return customer;
     }*/
+    public Customer getByAccount(Guid guid)
+    {
+        return _context.Customers.FirstOrDefault(c => c.AccountId == guid);
+    }
 }
