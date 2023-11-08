@@ -7,15 +7,16 @@ namespace BusinessLogic.Service;
 
 public class CustomerService : ICustomerService
 {
-    private readonly IMapper _mapper;
     private readonly IUnitOfWork _unitOfWork;
 
-    public CustomerService(IMapper mapper, IUnitOfWork unitOfWork)
+    public CustomerService(IUnitOfWork unitOfWork)
     {
-        _mapper = mapper;
         _unitOfWork = unitOfWork;
     }
-    
+    public Customer getByAccountId(Guid guid)
+    {
+        return _unitOfWork.Customer.getByAccount(guid);
+    }
 
 
     public IEnumerable<Customer> GetAll() => _unitOfWork.Customer.GetAll().ToList();

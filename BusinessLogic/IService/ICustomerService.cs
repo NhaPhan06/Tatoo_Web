@@ -4,7 +4,7 @@ namespace BusinessLogic.IService;
 
 public interface ICustomerService
 {
-    IEnumerable<Customer> GetAll();
+    Customer getByAccountId(Guid guid);
+	IEnumerable<Customer> GetAll();
 
-    /* Customer Update(Guid id, Customer customer,Account account);*/
-}
+    /* Customer Update(Guid id, Customer customer,Account account);*/}
