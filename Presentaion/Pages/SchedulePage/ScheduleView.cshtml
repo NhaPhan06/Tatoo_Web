@@ -179,7 +179,7 @@
                                                 {
                                                     <td style="color: red">NULL</td>
                                                 }
-                                                @if (Model.Bookings[i].Status != "CANCEL") 
+                                                @if (Model.Bookings[i].Status != "CANCEL" && Model.Bookings[i].Status != "DONE" && Model.Bookings[i].Status != "NULL")
                                                 {
                                                 <td style="text-align:center">
                                                     <a asp-page="./ScheduleCreate" class="btn btn-rounded btn-primary" asp-route-id="@Model.Bookings[i].Id">Create</a>
@@ -187,6 +187,11 @@
                                                 <td style="text-align:center">
                                                     <a asp-page-handler="bookingcancel" class="btn btn-rounded btn-danger" asp-route-id="@Model.Bookings[i].Id">Cancel</a>
                                                 </td>
+                                                }
+                                                else
+                                                {
+                                                    <td></td>
+                                                    <td></td>
                                                 }
                                             </tr>                                              
                                             }
@@ -242,7 +247,7 @@
                                                         {
                                                             <td style="color: red">NULL</td>
                                                         }
-                                                        @if (item.Status != "CANCEL") 
+                                                        @if (item.Status != "CANCEL" && item.Status != "DONE" && item.Status != "NULL")
                                                         {
                                                         <td style="text-align:center">
                                                             <a asp-page="./ScheduleUpdate" class="btn btn-rounded btn-primary" asp-route-id="@item.Id">Update</a>
@@ -250,8 +255,12 @@
                                                         <td style="text-align:center">
                                                             <a asp-page-handler="cancel" class="btn btn-rounded btn-danger" asp-route-id="@item.Id">Cancel</a>
                                                         </td>
+                                                        } else
+                                                        {
+                                                            <td></td>
+                                                            <td></td>
                                                         }
-                                                    </tr>
+                                            </tr>
                                                 }
                                             </tbody>
                                         </table>
