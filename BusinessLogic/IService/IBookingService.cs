@@ -6,5 +6,5 @@ public interface IBookingService
 {
     IEnumerable<Booking> GetAll();
     
-    Task<bool> CreateBooking(Guid id, DateTime? date, Guid studioID);
+    Task<bool> CreateBooking(Guid id, DateTime date, Guid studioID);
 }

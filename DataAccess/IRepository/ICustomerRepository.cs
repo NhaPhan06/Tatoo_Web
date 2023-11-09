@@ -5,6 +5,7 @@ namespace DataAccess.IRepository;
 
 public interface ICustomerRepository : IGenericRepository<Customer>
 {
+    Customer getByAccount(Guid guid);
     IEnumerable<Customer> GetAll();
     /*Customer Update(Customer customer);*/
     /*void SaveChanges();*/

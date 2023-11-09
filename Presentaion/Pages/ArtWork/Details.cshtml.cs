@@ -21,7 +21,7 @@ namespace Presentaion.Pages.ArtWork
 
       public  DataAccess.DataAccess.ArtWork ArtWork { get; set; } = default!; 
 
-        public async Task<IActionResult> OnGetAsync(Guid? id)
+        public async Task<IActionResult> OnGetAsync(Guid id)
         {
             if (id == null || _context.ArtWorks == null)
             {

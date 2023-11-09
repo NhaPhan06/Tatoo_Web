@@ -20,6 +20,12 @@ public class ArtistRepository: GenericRepository<Artist>, IArtistRepository
         return artist;
     }
 
+    public Artist GetArtistById(Guid id)
+    {
+        var artid = _context.Set<Artist>().Include(c =>c.Studio).FirstOrDefault(c => c.Id == id);
+        return artid;
+    }
+
     public List<Artist> SearchArtist(string name)
     {
         if (name == null)

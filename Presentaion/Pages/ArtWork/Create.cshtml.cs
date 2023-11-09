@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using DataAccess;
 using DataAccess.DataAccess;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 
 namespace Presentaion.Pages.ArtWork
 {
@@ -36,7 +37,7 @@ namespace Presentaion.Pages.ArtWork
             {
                 return Page();
             }
-
+            ArtWork.Id = Guid.NewGuid();
             _context.ArtWorks.Add(ArtWork);
             await _context.SaveChangesAsync();
 
